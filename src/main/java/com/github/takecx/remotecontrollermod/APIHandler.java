@@ -16,7 +16,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraftforge.server.ServerLifecycleHooks;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
 import java.util.*;
 
 import org.apache.logging.log4j.LogManager;
@@ -56,6 +55,10 @@ public class APIHandler {
     protected static final String CHAT = "chat.post";
     // giveEnchant(minecraft:sharpness,5)
     protected static final String GIVEENCHANT = "giveEnchant";
+    // world.setDayTime(time)
+    protected static final String WORLDSETDAYTIME = "world.setDayTime";
+    // world.runCommand(command)
+    protected static final String WORLDRUNCOMMAND = "world.runCommand";
 
     public APIHandler() {
         MinecraftServer currentServer = ServerLifecycleHooks.getCurrentServer();
@@ -132,9 +135,12 @@ public class APIHandler {
                     startZ = endZ;
                     endZ = tmp;
                 }
-                for (int x = startX; x < endX + 1; x++) {
-                    for (int y = startY; y < endY + 1; y++) {
-                        for (int z = startZ; z < endZ + 1; z++) {
+                // for (int x = startX; x < endX + 1; x++) {
+                // for (int y = startY; y < endY + 1; y++) {
+                // for (int z = startZ; z < endZ + 1; z++) {
+                for (int x = endX; x > startX - 1; x--) {
+                    for (int y = endY; y > startY - 1; y--) {
+                        for (int z = endZ; z > startZ - 1; z--) {
                             BlockPos targetPos = new BlockPos(x, y, z);
                             myWorld.setBlock(targetPos, block.defaultBlockState(), 3);
                         }
@@ -223,6 +229,17 @@ public class APIHandler {
                 Minecraft.getInstance().player.connection
                         .sendCommand("enchant @p " + arg_items[0] + " " + arg_items[1]);
                 return null;
+            } else {
+                if (cmd.equals(WORLDSETDAYTIME)) {
+                    long time = Long.parseLong(args);
+                    myWorld.setDayTime(time);
+                    return null;
+                } else if (cmd.equals(WORLDRUNCOMMAND)) {
+                    myWorld.getServer().getCommands().performPrefixedCommand(
+                            myWorld.getServer().createCommandSourceStack(),
+                            args);
+                    return null;
+                }
             }
             return null;
         } else {
