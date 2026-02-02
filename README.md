@@ -20,7 +20,7 @@ Minecraft Remote controller
 4. add Minecraft extension
 
 
-![add_extension](https://github.com/chari412/raspberryjammod/blob/master/asset/add_extension.png?raw=true)
+![add_extension](https://github.com/chari412/raspberryjammod/blob/master/asset/add_extension2.png?raw=true)
 
 ![choose_extension](https://github.com/chari412/raspberryjammod/blob/master/asset/choose_extension.png?raw=true)
 
