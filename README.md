@@ -5,7 +5,7 @@
 
 Remote Controller Mod for 1.20.1 is now available!!
 
-[Scratch for 1.20.1](https://takecx.github.io/scratch-gui/1-20-1/)
+[Scratch for 1.20.1](https://chari412.github.io/scratch-gui/1-20-1/)
 
 ## Summary
 Minecraft Remote controller
@@ -20,13 +20,13 @@ Minecraft Remote controller
 4. add Minecraft extension
 
 
-![add_extension](https://github.com/takecx/raspberryjammod/blob/master/asset/add_extension.png?raw=true)
+![add_extension](https://github.com/chari412/raspberryjammod/blob/master/asset/add_extension.png?raw=true)
 
-![choose_extension](https://github.com/takecx/raspberryjammod/blob/master/asset/choose_extension.png?raw=true)
+![choose_extension](https://github.com/chari412/raspberryjammod/blob/master/asset/choose_extension.png?raw=true)
 
 5. enjoy!!
 
-![extension_main](https://github.com/takecx/raspberryjammod/blob/master/asset/extension_main_en.png?raw=true)
+![extension_main](https://github.com/chari412/raspberryjammod/blob/master/asset/extension_main_en.png?raw=true)
 
 
 ## Features
